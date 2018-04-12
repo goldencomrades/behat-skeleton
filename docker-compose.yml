@@ -8,10 +8,14 @@ services:
     command: >
       bash -c "sed -ri -e 's!/var/www/html!/var/www/public!g'
       /etc/apache2/sites-available/*.conf; apache2-foreground"
+    networks:
+      default:
+        aliases:
+          - behat.testing
     volumes:
       - ./:/var/www/
     ports:
-      - 8080:80
+      - 80:80
     links:
       - selenium
 

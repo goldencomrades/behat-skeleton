@@ -27,6 +27,6 @@ class FeatureContext extends MinkContext implements Context
      */
     public function iWaitUntilThePageIsLoaded()
     {
-        sleep(3);
+        sleep(4);
     }
 }

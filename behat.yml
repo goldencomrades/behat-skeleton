@@ -14,6 +14,6 @@ default:
     Behat\MinkExtension:
       browser_name: chrome
       default_session: selenium2
-      base_url: http://testing.localhost
+      base_url: http://behat.testing
       selenium2:
         wd_host: http://selenium:4444/wd/hub

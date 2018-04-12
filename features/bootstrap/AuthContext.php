@@ -9,7 +9,7 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Defines application features from the specific context.
  */
-class AuthContext extends FeatureContext implements Context
+class AuthContext extends BaseContext implements Context
 {
     /**
      * Initializes context.
@@ -23,9 +23,9 @@ class AuthContext extends FeatureContext implements Context
     }
 
     /**
-     * @Then I see the login form
+     * @Then I see the message :arg1
      */
-    public function iSeeTheLoginForm()
+    public function iSeeTheMessage($arg1)
     {
         throw new PendingException();
     }

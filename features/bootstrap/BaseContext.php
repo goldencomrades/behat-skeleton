@@ -9,7 +9,7 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends MinkContext implements Context
+class BaseContext extends MinkContext implements Context
 {
     /**
      * Initializes context.
@@ -23,9 +23,9 @@ class FeatureContext extends MinkContext implements Context
     }
 
     /**
-     * @Given I wait until the page is loaded
+     * @Given I wait until the page loads
      */
-    public function iWaitUntilThePageIsLoaded()
+    public function iWaitUntilThePageLoads()
     {
         sleep(4);
     }

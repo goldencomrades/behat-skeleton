@@ -26,9 +26,12 @@ services:
   vnc:
     image: dougw/novnc
     command: >
-      bash -c "cd /root/noVNC/build; cp vnc.html index.html;
+      bash -c "(echo \"<script>window.location='vnc.html?host=\";
+      printenv REMOTE_HOST; echo \"&autoconnect=true&port=\"; printenv REMOTE_PORT;
+      echo \"'</script>\";) | tr -d '\n' > /root/noVNC/build/index.html;
       supervisord -c /etc/supervisor/conf.d/supervisord.conf"
-    links:
-      - selenium
+    environment:
+      - REMOTE_HOST=localhost
+      - REMOTE_PORT=5900
     ports:
-      - 8090:8081
+      - 8081:8081

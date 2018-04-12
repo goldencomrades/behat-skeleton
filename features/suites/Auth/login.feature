@@ -1,7 +1,7 @@
 
   Feature: Authenticate user
 
-    @auth @javascript
     Scenario: Login
-       Given I am on homepage
+       Given I am on the homepage
+         And I wait until the page is loaded
         Then I see the login form

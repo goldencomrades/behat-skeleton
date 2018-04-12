@@ -7,7 +7,8 @@ services:
     working_dir: /var/www
     command: >
       bash -c "sed -ri -e 's!/var/www/html!/var/www/public!g'
-      /etc/apache2/sites-available/*.conf; apache2-foreground"
+      /etc/apache2/sites-available/*.conf; a2enmod rewrite;
+      apache2-foreground"
     networks:
       default:
         aliases:

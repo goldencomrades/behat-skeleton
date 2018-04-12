@@ -4,29 +4,16 @@
 
 default:
   suites:
-    core_features:
+    Auth:
       paths:
-        - %paths.base%/features/suites/core
+        - %paths.base%/features/suites/Auth
       contexts:
-        - CoreDomainContext
-    user_features:
-      paths:
-        - %paths.base%/features/web
-      filters:
-        role: user
-      contexts:
-        - UserContext
-    admin_features:
-      paths:
-        - %paths.base%/features/web
-      filters:
-        role: admin
-      contexts:
-        - AdminContext
+        - AuthContext
 
   extensions:
     Behat\MinkExtension:
       browser_name: chrome
+      default_session: selenium2
       base_url: http://testing.localhost:8080
       selenium2:
         wd_host: http://127.0.0.1:4444/wd/hub

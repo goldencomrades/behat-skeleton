@@ -17,6 +17,8 @@ services:
     image: selenium/standalone-firefox-debug:3.11.0-californium
     environment:
       - VNC_NO_PASSWORD=1
+      - SCREEN_WIDTH=900 #1200
+      - SCREEN_HEIGHT=675
     ports:
       - 4444:4444
       - 5900:5900

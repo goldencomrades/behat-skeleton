@@ -21,12 +21,4 @@ class AuthContext extends BaseContext implements Context
     public function __construct()
     {
     }
-
-    /**
-     * @Then I see the message :arg1
-     */
-    public function iSeeTheMessage($arg1)
-    {
-        throw new PendingException();
-    }
 }

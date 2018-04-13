@@ -29,4 +29,12 @@ class BaseContext extends MinkContext implements Context
     {
         sleep(4);
     }
+
+    /**
+     * @Then I see the message :arg1
+     */
+    public function iSeeTheMessage($arg1)
+    {
+        return;
+    }
 }
